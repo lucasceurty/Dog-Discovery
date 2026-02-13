@@ -12,6 +12,16 @@ def index():
 def login():
     return jsonify({"message": "Login endpoint"})
 
+# Register
+@app.route("/api/register", methods=["POST"])
+def register():
+    data = request.get_json()
+    email = data.get("email")
+    password = data.get("password")
+    # Here you would add logic to save the user to a database
+    # For now, just return a success message
+    return jsonify({"message": "Registration successful!"})
+
 # Home
 @app.route("/api/home", methods=["GET"])
 def home():
